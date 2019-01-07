@@ -196,9 +196,9 @@ def create_controller(A, B, C, qex, rx, lh, N):
         for j in range(rr):
             Bi[i+rp, j] = B[i, j]
     
-    # Qe is pxp matrix => 1x1
-    # Qx is nxn matrix => 3x3
-    # R is rxr matrix => 1x1
+    # Qe is pxp matrix
+    # Qx is nxn matrix
+    # R is rxr matrix
     Qe = qex * np.identity(rp)
     Qx = np.zeros(shape=(rn,rn))
     assert (rn==10), "Controller: Lambda h requires A matrix to be 10x10"
