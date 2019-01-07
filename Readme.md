@@ -41,10 +41,13 @@ All the code is divided into several functions, some of which are modified betwe
 The dynamic state space system is generated in _create_system_ function. The function takes some parameters necessary for the model, typically sampling time (time step), height of the center of mass and gravity.
 
 The state space is a discrete representation of the system, shown in equation below [3].
+
 ![Discrete state space system[3]](docs/equ_1.png)
 
 For example, the basic model in [3] with all the vectors written out is 
+
 ![Full state space presentation[3]](docs/equ_2.png)
+
 where the problem has one movement direction only (X-axis, i.e. a 2D problem).
 
 All the systems are written out according to the publications listed above. For clarity, everything is written out.
