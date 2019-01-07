@@ -179,9 +179,9 @@ def create_controller(A, B, C, qex=1.0, rx=1.e-6, N=320):
         for j in range(rr):
             Bi[i+rp, j] = B[i, j]
     
-    # Qe is pxp matrix => 1x1
-    # Qx is nxn matrix => 3x3
-    # R is rxr matrix => 1x1
+    # Qe is pxp matrix
+    # Qx is nxn matrix
+    # R is rxr matrix
     Qe = qex * np.identity(rp)
     Qx = np.zeros(shape=(rn,rn))
     R = rx * np.identity(rr)
