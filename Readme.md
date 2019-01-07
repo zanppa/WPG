@@ -22,11 +22,15 @@ A walking bipedal robot is a highly dynamic system in that as soon as one leg is
 Zero moment point control is one method for keeping the robot stable. The idea is that as long as the ZMP stays inside the support polygon (area under the foot) during movement, the robot does not fall. To simplify things, the robot is reduced to just its center of mass (CoM), and the movement path of the CoM is planned.
 
 For example, below is a top view of a bipedal robot's movement path [3].
+
 ![Example of movement path](docs/Figure_5.png)
+
 The squares represent the foot locations, starting from the left side and advancing to the right. 3 steps are presented.
 
 This problem can be decoupled to X and Y axis separately. [3] also shows the X and Y axis separately:
+
 ![X and Y axis of the movement path[3]](docs/Figure_6.png)
+
 In the top part the X axis is shown, with forward motion in clear steps. The bottom part the Y axis shows the sideways motion. Red dashed line is the ZMP reference and blue line is the actual value. It can be seen that the actual value follows the reference rather nicely. The black line is the movement path of the center of mass, which can be seen moving smoothly and it needs not to be placed over the foot during the movement. This allows for smooth dynamic walking.
 
 
@@ -53,7 +57,9 @@ The second function, which was most difficult to implement and took a few weeks 
 I have to admit I don't completely understand the math behind the controller design process, but directly implementing the method seems to work rather well. Also, it took time to get the "augmented state" matrices and vectors correct. There still might be bugs even though with the given systems the designed seems to work.
 
 The function takes the state matrices as input and also needs loss coefficients that are used in the design optimization. The output is gain values for controller of type [4]
+
 ![Controller function[4]](docs/equ_3.png)
+
 where the first part is the integral term, integrating the error of the output, second part is the state feedback and the last part is the preview part.
 
 #### Step pattern generation
@@ -88,9 +94,13 @@ This file further enhances the table cart model by adding the horizontal angular
 
 ### Example output
 An example of the output of the basic table cart model, _zmp_cart_table.py_ is shown in next figures.
+
 ![Output in X direction](docs/Figure_1.png)
+
 ![Output in Y direction](docs/Figure_2.png)
+
 ![Controller outputs](docs/Figure_3.png)
+
 ![Velocity of CoM](docs/Figure_4.png)
 
 
