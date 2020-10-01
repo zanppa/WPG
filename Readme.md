@@ -107,7 +107,7 @@ An example of the output of the basic table cart model, _zmp_cart_table.py_ is s
 ![Velocity of CoM](docs/Figure_4.png)
 
 
-### License
+### License_approval
 
 Following license applies to all code in this repository.
 
